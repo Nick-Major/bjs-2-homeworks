@@ -95,31 +95,31 @@ class Triangle {
     }
 
     get perimeter () {
-        this.perimeter = this.a + this.b + this.c;
-        return this.perimeter;
+        const perimeter = this.a + this.b + this.c;
+        return perimeter;
     }
 
     get area () {
         const p = this.perimeter * 0.5;
         const square = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         const roundItUp = square.toFixed(3);
-        this.area = parseFloat(roundItUp);
-        return this.area;
+        const area = parseFloat(roundItUp);
+        return area;
     }
 }
 
 function getTriangle(a, b, c) {
     try {
-        const newTriangle = new Triangle(a, b, c);
-        return newTriangle;
+        const newTri = new Triangle(a, b, c);
+        return newTri;
     } catch (error) {
         const errorObj = {
-           getArea () {
+           get area () {
             const msg = "Ошибка! Треугольник не существует";
             return msg;
            },
 
-           getPerimeter () {
+           get perimeter () {
             const msg = "Ошибка! Треугольник не существует";
             return msg;
            }
