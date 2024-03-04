@@ -101,7 +101,7 @@ class Triangle {
 
     get area () {
         const p = this.perimeter * 0.5;
-        const square = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        const square = Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
         const roundItUp = square.toFixed(3);
         const area = parseFloat(roundItUp);
         return area;
