@@ -16,7 +16,7 @@ class AlarmClock {
         this.alarmCollection.push({
             time: time,
             callback: callback,
-            cancall: true,
+            canCall: true,
         });
     }
 
@@ -47,8 +47,8 @@ class AlarmClock {
             const currentTime = this.getCurrentFormattedTime();
 
             this.alarmCollection.forEach((alarm) => {
-                if (alarm.time === currentTime && alarm.cancall === true) {
-                    alarm.cancall = false;
+                if (alarm.time === currentTime && alarm.canCall === true) {
+                    alarm.canCall = false;
                     alarm.callback();
                 }
             });
@@ -62,7 +62,7 @@ class AlarmClock {
 
     resetAllCalls() {
         this.alarmCollection.forEach((alarm) => {
-            alarm.cancall = true;
+            alarm.canCall = true;
         });
     }
 
